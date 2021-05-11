@@ -1,0 +1,72 @@
+.main-body {
+  padding: 100px;
+}
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.h2 {
+  margin-bottom: 50px;
+}
+.lead {
+  position: relative;
+  top: 20px;
+}
+.mb-4 {
+  margin-left: 15px;
+  color: red;
+  position: relative;
+  top: 10px;
+}
+.mb-0 {
+  margin-left: 15px;
+  color: red;
+  position: relative;
+  top: 7px;
+}
+.mb-1 {
+  width: 100%;
+  margin-left: 15px;
+  color: red;
+  position: relative;
+  top: 15px;
+}
+.mb-2 {
+  width: 120%;
+  margin-left: 15px;
+  color: red;
+  position: relative;
+  top: 6px;
+}
+.mm {
+  position: relative;
+  bottom: 10px;
+  margin-left: 15px;
+  color: #ff4757;
+}
+.mmm {
+  font-size: 2rem;
+  position: relative;
+  top: 10px;
+}
+.ll {
+  font-size: 2rem;
+  position: relative;
+  top: 17px;
+  left: 10px;
+}
+.h2,
+h2 {
+  font-size: 30px;
+  position: relative;
+  top: -15px;
+}

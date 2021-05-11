@@ -1,0 +1,62 @@
+create table DAccount (
+    cid int(11) primary key AUTO_INCREMENT,
+    password varchar(20)
+    );
+
+create table NAccount (
+    cid int(11) primary key AUTO_INCREMENT,
+    password varchar(20)
+    );
+
+create table doctor (
+    did varchar(10) primary key,
+    fname varchar(20),
+    lname varchar(20),
+    DOB date,
+    cid int(11),
+    CONSTRAINT cid_doc foreign key (cid) REFERENCES DAccount (cid)
+    );
+
+create table nurse (
+    nid varchar(10) primary key,
+    fname varchar(20),
+    lname varchar(20),
+    DOB date,
+    cid int(11),
+    CONSTRAINT cid_nur foreign key (cid) REFERENCES NAccount (cid)
+    );
+
+create table room ( 
+    rid int(11) primary key AUTO_INCREMENT,
+    rgroup int(1)
+    );
+
+create table patient (
+    pid varchar(10) primary key,
+    Pname varchar(50),
+    DOB date,
+    disease varchar(500),
+    did varchar(10),
+    rid int(11),
+    CONSTRAINT did_paitent foreign key (did) REFERENCES doctor (did),
+    CONSTRAINT rid_paitent foreign key (rid) REFERENCES room (rid),
+    UNIQUE (rid),
+    UNIQUE (pname)
+    );
+
+create table NShifts (
+    ShiftID int(11) PRIMARY KEY AUTO_INCREMENT,
+    ShiftDate Date,
+    ShiftTime time,
+    nid int(10),
+    CONSTRAINT fk_nid foreign key (nid) REFERENCES nurse(nid)
+    
+    );
+
+create table DShifts (
+    ShiftID int(11) PRIMARY KEY AUTO_INCREMENT,
+    ShiftDate Date,
+    ShiftTime time,
+    did int(10),
+    CONSTRAINT fk_did foreign key (did) REFERENCES doctor(did)  
+    );

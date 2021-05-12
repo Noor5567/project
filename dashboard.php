@@ -9,6 +9,13 @@ body
 {
 background-image: url('images/hero-bg.jpg');
 }
+.h2, h2 {
+    font-size: 30px;
+    position: relative;
+    top: -15px;
+    text-align: center;
+    left:10px;
+}
   </style>
 </head>
 <div class="container">
@@ -85,7 +92,7 @@ background-image: url('images/hero-bg.jpg');
                     <div class="col-sm-3">
                       <h3 class="mb-4">Shift Date</h3>
                     </div>
-                    <div class="ll">
+                    <div class="ll text-center ">
                     <?php
                     $stmt=$con->prepare("SELECT shiftdate FROM dshifts WHERE did=".$_SESSION['ID'].""); // wrong nooo zaaabt 
                     $stmt->execute();

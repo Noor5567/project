@@ -1,3 +1,17 @@
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .alert-danger {
+	position: fixed;
+    width: -webkit-fill-available;
+    text-align: center;
+    font-size: x-large;
+}
+  </style>
+</head>
+
 <?php 
 session_start(); 
 if(isset($_SESSION['id']))
@@ -23,8 +37,11 @@ if($firstTwoCharacters == '00'){
        $_SESSION['ID']=$row['did'];  // register session userID 
        header('Location:dashboard.php'); // redicret to dashboard page 
        exit();
-    }  
+    }  else {
+		echo '<div class ="alert alert-danger" <strong> ID Or Password Is Incorrect </strong> </div>';
+	}
 }
+
 
 else if($firstTwoCharacters == '11'){
 	$stmt=$con->prepare("SELECT nid,password from nurse,naccount where nurse.cid = naccount.cid AND nid=? AND password=?" );
@@ -38,7 +55,9 @@ else if($firstTwoCharacters == '11'){
        $_SESSION['ID']=$row['nid'];  // register session userID 
        header('Location:NDashboard.php'); // redicret to dashboard page 
        exit();
-    }  
+    }   else {
+		echo '<div class ="alert alert-danger" <strong> ID Or Password Is Incorrect </strong> </div>';
+	}
 }
   
 }
